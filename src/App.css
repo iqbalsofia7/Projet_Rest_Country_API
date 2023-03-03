@@ -3,6 +3,40 @@
     justify-content: center;
     margin: 0px auto;
     flex-direction: column;
-    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+}
+.card {
+    width: 320px;
+    height: 400px;
+    background-color: darkseagreen;
+    border-radius: 10px;
+    padding: 0px;
+    height: 400px;
+    width: 320px;
+    margin: 10px;
+    box-shadow: 0px 0px 8px 1px grey;
+    border: none
+}
+.home {
+    display: flex;
+    background: #f8f6f6;
+    justify-content: center;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+}
+.img {
+    width: 320px;
+    height: 200px;
+    background: #ded7d7;
+    margin: 0;
+    border-top-left-radius:5px;
+    border-top-right-radius: 5px;
+    border: none
+}
+.infos {
+    padding: 5px 20px 20px 20px
+}
+h4 {
+    padding: 15px 20px 0px 20px
+
 }
