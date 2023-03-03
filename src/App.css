@@ -1,31 +1,32 @@
 .App{
     display: flex;
-    justify-content: center;
-    margin: 0px auto;
+    /* justify-content: center; */
+    margin: 0px 10px;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 .card {
-    width: 320px;
+    width: 300px;
     height: 400px;
-    background-color: darkseagreen;
     border-radius: 10px;
     padding: 0px;
     height: 400px;
     width: 320px;
     margin: 10px;
-    box-shadow: 0px 0px 8px 1px grey;
+    box-shadow: 0px 0px 8px 1px rgb(187, 178, 178);
     border: none
 }
 .home {
     display: flex;
-    background: #f8f6f6;
-    justify-content: center;
+    background: #ffffff;
+    justify-content: space-evenly;
     /* flex-direction: column; */
+    margin: 0 auto;
     flex-wrap: wrap;
 }
 .img {
-    width: 320px;
+    /* width: 320px; */
     height: 200px;
     background: #ded7d7;
     margin: 0;
@@ -38,5 +39,40 @@
 }
 h4 {
     padding: 15px 20px 0px 20px
-
 }
+
+nav {
+    padding: 25px 25px 5px 25px;
+}
+.part1, .part2 {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    align-items: center;
+    margin: 0px 0px 20px 0px
+}
+
+.darkMode {
+    padding: 5px 10px;
+    width: auto;
+    border-radius: 5px;
+    background: #000;
+    color: white;
+}
+.darkMode:hover {
+    background: white;
+    color: black;
+}
+select {
+    padding: 5px 8px;
+    border-radius: 2px
+}
+input {
+    padding: 2px 5px;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0px 0px 5px 1px grey;
+    height: 40px;
+    width: 300px;
+}
+

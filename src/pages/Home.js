@@ -1,30 +1,18 @@
 import { useState, useEffect } from "react"
 
-//Page principale qui contiendra toutes les cards
-function Home() {
-    //tableau vide qui sera mis à jour dans le useEffect une seule fois
-    const [data, setData] = useState([])
-    //API 
-    useEffect (() => {
-        //url de l'API
-        fetch("https://restcountries.com/v3.1/all")
-        //Récupérer les données
-        .then(res => res.json())
-        //Assigner les données
-        .then(data => setData(data))
-        .catch(err => console.log(err));
-    }, [])
+function Home(props) {
+
     return(
         <section className='home'>
 
-        {data.map((item, index) => {
+        {props.filterdCard.map((item, index) => {
             return(
             <div key={index} className="card">
                 <img src={item.flags.png} alt="" className="img"/>
-                <h4>Nom du pays</h4>
+                <h4>{item.name.common}</h4>
                 <div className="infos">
-                    <p><b>Population :</b> {item.name.common} </p>
-                    <p><b>Région :</b> {item.population} </p>
+                    <p><b>Population :</b> {item.population} </p>
+                    <p><b>Region :</b> {item.region} </p>
                     <p><b>Capital :</b> {item.capital} </p>
                     
                 </div>
