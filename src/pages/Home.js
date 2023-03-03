@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 
 function Home(props) {
 
@@ -7,16 +8,17 @@ function Home(props) {
 
         {props.filterdCard.map((item, index) => {
             return(
-            <div key={index} className={props.dark ? 'cardDark' : 'card'}>
-                <img src={item.flags.png} alt="" className="img"/>
-                <h4>{item.name.common}</h4>
-                <div className="infos">
-                    <p><b>Population :</b> {item.population} </p>
-                    <p><b>Region :</b> {item.region} </p>
-                    <p><b>Capital :</b> {item.capital} </p>
-                    
+            <Link to={`/pays/${item.tld}`} style={{ textDecoration: 'none', color:'black' }}>
+                <div key={index} className={props.dark ? 'cardDark' : 'card'} onClick={()=>props.showCard(item)}>
+                    <img src={item.flags.png} alt="" className="img"/>
+                    <h4>{item.name.common}</h4>
+                    <div className="infos">
+                        <p><b>Population :</b> {item.population} </p>
+                        <p><b>Region :</b> {item.region} </p>
+                        <p><b>Capital :</b> {item.capital} </p>
+                    </div>
                 </div>
-            </div>
+            </Link>
         )})}
         </section>
     )

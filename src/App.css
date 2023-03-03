@@ -1,7 +1,7 @@
 .App{
     display: flex;
     /* justify-content: center; */
-    margin: 0px 15px;
+    margin: 0px 100px;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -35,7 +35,7 @@
     height: 400px;
     width: 320px;
     margin: 10px;
-    box-shadow: 0px 0px 8px 1px rgb(187, 178, 178);
+    box-shadow: 0px 0px 8px 1px rgb(224, 218, 218);
     border: none;
     color: white;
     background: #0f0f0f;
@@ -112,3 +112,51 @@ input {
     width: 300px;
 }
 
+* {
+    list-style: none;
+    text-decoration: none;
+    
+}
+
+
+
+Card {
+    background: #000;
+}
+
+.imgCard {
+    width: 400px;
+    height: 300px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+}
+.CardBody {
+    display: flex;
+    /* justify-content: space-evenly; */
+    gap: 20px;
+    padding: 0 50px 0 20px;
+}
+.infosCard {
+    line-height: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.infosCard > * {
+    width: 50%;
+}
+.goBack {
+    border: none;
+    border-radius: 5px;
+    background: #000;
+    color: white;
+    padding: 2px 10px;
+    margin: 5px 20px;
+    border: 2px solid white
+
+}
+.goBack:hover {
+    background: white;
+    color: rgb(0, 0, 0);
+    border: 2px solid black
+}
