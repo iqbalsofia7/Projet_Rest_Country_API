@@ -48,7 +48,7 @@ function App() {
     <div className={dark ? 'AppDark' : 'App'}>
       <Navbar rechercher={Rechercher} darkMode={ChangeMode} dark={dark}/>
       <Routes>
-        <Route path="/"  element={<Home showCard={showCard} dark={dark} filterdCard={filteredCard} data={data} setData={setData}/>}/>
+        <Route path="/"  element={<Home rechercher={Rechercher} showCard={showCard} dark={dark} filterdCard={filteredCard} data={data} setData={setData}/>}/>
         {/* <Route path="/:pays" element={<Card/>}/> */}
         <Route path="/pays/:pays" element={<Card country={choix} item={filteredCard} pays={'test'}/>}/>
       </Routes> 

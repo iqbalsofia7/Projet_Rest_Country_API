@@ -30,13 +30,11 @@ function Card(props) {
                             <span key={index}>{country.languages[index]}</span>
                         );
                     })}</p>
-
                     {/* <p><b>Languages:</b> {Object.keys(country.languages).map((langue, index) => {
                         return (
                             <span key={index}>{langue}</span>
                         )
                     })}</p> */}
-
                 </div>
                 
                 <div>
