@@ -5,19 +5,17 @@
     padding: 0px 100px;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
-    height: 100vh;
+    height: auto;
 }
 .AppDark {
     display: flex;
-    /* justify-content: center; */
     margin: 0px 00px;
     padding: 0px 100px;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
-    background: #0e0d0d;
+    background: #232121;
     color: white;
-    height: 100vh;
-
+    height: auto;
 }
 
 .card {
@@ -30,10 +28,11 @@
     margin: 10px;
     box-shadow: 0px 0px 8px 1px rgb(187, 178, 178);
     border: none;
-    transition: 0.4s
+    transition: 0.3s
 }
 .card:hover, .cardDark:hover {
-    scale: 1.05
+    scale: 1.04;
+    margin: 2px;
 }
 .cardDark {
     width: 320px;
@@ -43,11 +42,12 @@
     height: 400px;
     width: 320px;
     margin: 10px;
-    box-shadow: 0px 0px 8px 1px rgb(224, 218, 218);
+    box-shadow: 0px 0px 8px 2px rgb(231, 229, 229);
     border: none;
     color: white;
-    background: #0f0f0f;
-    transition: 0.4s
+    /* background: #645757; */
+    background: linear-gradient(to bottom, #dfd3d3, #000000);
+    transition: 0.3s
 }
 .home {
     display: flex;
