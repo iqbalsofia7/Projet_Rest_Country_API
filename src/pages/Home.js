@@ -7,7 +7,7 @@ function Home(props) {
 
         {props.filterdCard.map((item, index) => {
             return(
-            <div key={index} className="card">
+            <div key={index} className={props.dark ? 'cardDark' : 'card'}>
                 <img src={item.flags.png} alt="" className="img"/>
                 <h4>{item.name.common}</h4>
                 <div className="infos">

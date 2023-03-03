@@ -1,9 +1,19 @@
 .App{
     display: flex;
     /* justify-content: center; */
-    margin: 0px 10px;
+    margin: 0px 15px;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
+}
+.AppDark {
+    display: flex;
+    /* justify-content: center; */
+    margin: 0px 0px;
+    padding: 0px 15px;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0e0d0d;
+    color: white;
 }
 
 .card {
@@ -17,16 +27,29 @@
     box-shadow: 0px 0px 8px 1px rgb(187, 178, 178);
     border: none
 }
+.cardDark {
+    width: 320px;
+    height: 400px;
+    border-radius: 10px;
+    padding: 0px;
+    height: 400px;
+    width: 320px;
+    margin: 10px;
+    box-shadow: 0px 0px 8px 1px rgb(187, 178, 178);
+    border: none;
+    color: white;
+    background: #0f0f0f;
+}
 .home {
     display: flex;
-    background: #ffffff;
+    /* background: #ffffff; */
     justify-content: space-evenly;
     /* flex-direction: column; */
     margin: 0 auto;
     flex-wrap: wrap;
 }
 .img {
-    /* width: 320px; */
+    width: 320px;
     height: 200px;
     background: #ded7d7;
     margin: 0;
@@ -47,7 +70,7 @@ nav {
 .part1, .part2 {
     display: flex;
     justify-content: space-between;
-    background-color: white;
+    /* background-color: white; */
     align-items: center;
     margin: 0px 0px 20px 0px
 }
@@ -59,9 +82,22 @@ nav {
     background: #000;
     color: white;
 }
+
 .darkMode:hover {
     background: white;
     color: black;
+}
+.darkBtn {
+    background: white;
+    padding: 5px 10px;
+    width: auto;
+    border-radius: 5px;
+    color: black;
+}
+.darkBtn:hover {
+    background: #000;
+    color: white;
+    border: 2px solid white
 }
 select {
     padding: 5px 8px;

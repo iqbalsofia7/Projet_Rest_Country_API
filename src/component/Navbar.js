@@ -4,10 +4,13 @@ function Navbar(props) {
     return (
         <nav>
             <div className='part1'>
-                <h2>Where is the World ?</h2>
-                <button className='darkMode' >Dark Mode</button>
+                <h2>
+                    {props.dark ? 'Where is the World ?' : 'Here is the World'} </h2>
+                <button className={props.dark ? 'darkBtn' : 'darkMode'} onClick={props.darkMode}>
+                    {props.dark ? 'Light Mode ': 'Dark Mode'}
+                </button>
             </div>
-            
+
             <div className='part2'>
                 <input type="search" onChange={props.rechercher}  placeholder='Search for a country...' name="regions" id="" />
                 <select name="" id="">
