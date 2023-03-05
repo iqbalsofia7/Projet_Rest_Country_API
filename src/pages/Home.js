@@ -2,22 +2,28 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
 function Home(props) {
+    //filtre qui va permettre de trier les pays selon leur continent, on les affiche tous par défaut
+    const [selectedRegion, setSelectedRegion] = useState("all");
+
+    const handleRegionChange = (event) => {
+        setSelectedRegion(event.target.value);
+    }
 
     return(
         <section className='home'>
             <div className='part2'>
-                <input type="search" onChange={props.rechercher}  placeholder='Search for a country...' name="regions" id="" />
-                <select name="" id="">
+                <input type="search" onChange={props.rechercher} placeholder='Search for a country...' name="regions" id="" />
+                <select name="regions" id="regions" value={selectedRegion} onChange={handleRegionChange}>
                     <option value="all">All Regions</option>
-                    <option value="africa">Africa</option>
-                    <option value="northAmerica">NorthAmerica</option>
-                    <option value="southAmerica">South America</option>
-                    <option value="asia">Asia</option>
-                    <option value="europa">Europe</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Oceania">Oceania</option>
                 </select>
             </div>
             <br />
-        {props.filterdCard.map((item, index) => {
+            {/* {props.filterdCard.map((item, index) => { */}
+        {props.filterdCard.filter(item => selectedRegion === "all" || item.region === selectedRegion).map((item, index) => {
             return(
             <Link to={`/pays/${item.tld}`} style={{ textDecoration: 'none', color:'black' }}>
                 <div key={index} className={props.dark ? 'cardDark' : 'card'} onClick={()=>props.showCard(item)}>

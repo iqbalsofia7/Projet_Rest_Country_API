@@ -2,19 +2,19 @@
     display: flex;
     /* justify-content: center; */
     margin: 0px 00px;
-    padding: 0px 100px;
+    padding: 0px 80px;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     height: auto;
     background: #eeeaea;
 }
-body {
+body, html {
     background: #eeeaea;
 }
 .AppDark {
     display: flex;
     margin: 0px 00px;
-    padding: 0px 100px;
+    padding: 0px 50px;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     background: #232121;
@@ -37,7 +37,7 @@ body {
 }
 .card:hover, .cardDark:hover {
     scale: 1.04;
-    margin: 2px;
+    margin: 0px;
 }
 .cardDark {
     width: 320px;
@@ -57,18 +57,19 @@ body {
 .home {
     display: flex;
     /* background: #ffffff; */
-    justify-content: space-evenly;
+    justify-content: space-around;
     /* flex-direction: column; */
     margin: 0 auto;
     flex-wrap: wrap;
+    position: relative;
 }
 .img {
     width: 320px;
     height: 200px;
     background: #ded7d7;
     margin: 0;
-    border-top-left-radius:5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius:7px;
+    border-top-right-radius: 7px;
     border: none
 }
 .infos {
@@ -79,7 +80,7 @@ h4 {
 }
 
 nav {
-    padding: 25px 25px 5px 25px;
+    padding: 25px 20px 5px 20px;
 }
 .part1, .part2 {
     display: flex;
@@ -90,7 +91,9 @@ nav {
 }
 .part2 {
     width: 100%;
-    padding: 0 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: static;
 }
 
 .darkMode {
@@ -133,14 +136,11 @@ input {
 * {
     list-style: none;
     text-decoration: none;
-    
 }
 
-
-
-Card {
+/* .Card {
     background: #000;
-}
+} */
 
 .imgCard {
     width: 400px;

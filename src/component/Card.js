@@ -30,21 +30,23 @@ function Card(props) {
                             <span key={index}>{country.languages[index]}</span>
                         );
                     })}</p>
-                    {/* <p><b>Languages:</b> {Object.keys(country.languages).map((langue, index) => {
-                        return (
-                            <span key={index}>{langue}</span>
-                        )
-                    })}</p> */}
                 </div>
-                
+{/* Condition pour les borders-countries (car problème d'affichage) */}
+                {country.borders && country.borders.length > 0 ? (
                 <div>
                     <p><b>Border-countries :<br></br></b> {Object.keys(country.borders).map((index) => {
                         return (
-                            <button className='btnBrd' key={index}>{country.borders[index]}</button>
+                            // <button className='btnBrd' key={index}>{country.borders[index]}</button>
+                        <Link to={`/pays/${country.borders[index]}`} key={index}>
+                            <button className='btnBrd'>{country.borders[index]}</button>
+                        </Link>
                         );
                     })}</p>
-
-                    </div>
+                </div> )
+                :                 
+                <div>
+                    <p><b>Border-countries :</b> / </p>
+                </div>}
             </div>
         </div>
         )}

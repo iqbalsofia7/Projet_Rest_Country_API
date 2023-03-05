@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import Card from './component/Card'
 import Navbar from './component/Navbar.js';
+// import BorderCard from './component/BorderCard.js'
 import { useEffect } from 'react';
 
 function App() {
@@ -51,6 +52,9 @@ function App() {
         <Route path="/"  element={<Home rechercher={Rechercher} showCard={showCard} dark={dark} filterdCard={filteredCard} data={data} setData={setData}/>}/>
         {/* <Route path="/:pays" element={<Card/>}/> */}
         <Route path="/pays/:pays" element={<Card country={choix} item={filteredCard} pays={'test'}/>}/>
+
+
+        {/* <Route path="/pays/:pays" element={BorderCard} /> */}
       </Routes> 
     </div>
   )
