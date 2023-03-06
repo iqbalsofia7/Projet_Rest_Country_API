@@ -48,10 +48,12 @@ function App() {
 
   return(
     <div className={dark ? 'AppDark' : 'App'}>
+      {/* Navbar contenant le darkMode  */}
       <Navbar rechercher={Rechercher} darkMode={ChangeMode} dark={dark}/>
       <Routes>
+        {/* Page d'Accueil qui contient toutes les cards et la barre de recherche  */}
         <Route path="/"  element={<Home rechercher={Rechercher} showCard={showCard} dark={dark} filterdCard={filteredCard} data={data} setData={setData}/>}/>
-        {/* <Route path="/:pays" element={<Card/>}/> */}
+        {/* Route pour les Cards et Border Country Card  */}
         <Route path="/pays/:id" element={<Card country={choix} showCard={showCard} dark={dark} data={data}/>}/>
       </Routes> 
     </div>

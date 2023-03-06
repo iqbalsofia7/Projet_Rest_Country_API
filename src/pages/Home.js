@@ -22,9 +22,11 @@ function Home(props) {
                 </select>
             </div>
             <br />
+
         {/* Filtre/Continent pour les cards  */}
         {props.filterdCard.filter(item => selectedRegion === "all" || item.region === selectedRegion).map((item, index) => {
             return(
+            //Link qui ramène vers la card sur laquelle on a cliqué
             <Link to={`/pays/${item.cca3}`} style={{ textDecoration: 'none', color:'black' }}>
                 {/* Pas de useParams utilisé, c'est la card sur laquelle on va cliquer qui va faire appelle à une fonction onClick */}
                 {/* (qui va modifier le useState afin d'afficher la bonne card) */}

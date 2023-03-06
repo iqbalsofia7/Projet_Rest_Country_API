@@ -14,7 +14,7 @@ function Card(props) {
         <Link to='../'>
         <button className='goBack'>Go Back</button>
         </Link>
-
+{/* Informations détaillées des pays */}
         {country && (
         <div className='CardBody'>
             <img src={country.flags.png} alt="" className="imgCard"/>
@@ -47,12 +47,12 @@ function Card(props) {
                 );
                 })}</p>
             </div> 
-            ) :                 
+            ) :   
+// Dans le cas ou le pays ne contient pas de border-countries               
             <div>
                 <p><b>Border-countries :</b> / </p>
             </div>
             }
-
             </div>
         </div>
         )}
