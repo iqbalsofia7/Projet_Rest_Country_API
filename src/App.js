@@ -4,8 +4,10 @@ import { Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import Card from './component/Card'
 import Navbar from './component/Navbar.js';
-// import BorderCard from './component/BorderCard.js'
+import BorderCard from './component/BorderCard.js'
 import { useEffect } from 'react';
+import React from 'react';
+
 
 function App() {
   //Dark Mode 
@@ -40,21 +42,24 @@ function App() {
     setFilteredCard(filteredItem)
   }, [searchValue, data])
 
+  //Afficher la carte dans le component Card
     const [choix, setChoix] = useState(null);
     const showCard = (country) => {
       setChoix(country);
     }
-
+    // const [selectedCountry, setSelectedCountry] = useState(null);
+    // const handleClick = (cca3) => {
+    //   setSelectedCountry(cca3);
+    // };
   return(
     <div className={dark ? 'AppDark' : 'App'}>
       <Navbar rechercher={Rechercher} darkMode={ChangeMode} dark={dark}/>
       <Routes>
         <Route path="/"  element={<Home rechercher={Rechercher} showCard={showCard} dark={dark} filterdCard={filteredCard} data={data} setData={setData}/>}/>
         {/* <Route path="/:pays" element={<Card/>}/> */}
-        <Route path="/pays/:pays" element={<Card country={choix} item={filteredCard} pays={'test'}/>}/>
+        <Route path="/pays/:id" element={<Card country={choix} showCard={showCard} dark={dark} data={data}/>}/>
 
-
-        {/* <Route path="/pays/:pays" element={BorderCard} /> */}
+        {/* <Route path="/pays/:cca3" element={<BorderCard country={choix} data={data} showCard={showCard} filterdCard={filteredCard} />} /> */}
       </Routes> 
     </div>
   )

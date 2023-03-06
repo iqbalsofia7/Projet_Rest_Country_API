@@ -1,14 +1,17 @@
 import { useState, useEffect } from 'react';
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 
 //Component qui affichera uniquement la Card sur laquelle on a cliqué
 function Card(props) {
-    const country = props.country;
-
+    // const country = props.country;
+    const { id } = useParams();
+    const country = props.data.find((c) => c.cca3 === id);
+    
     return (
-    <section className='Card'>
+    <section className={props.dark ? 'Card' : 'Card2'}>
         <Link to='../'>
         <button className='goBack'>Go Back</button>
         </Link>
@@ -32,21 +35,28 @@ function Card(props) {
                     })}</p>
                 </div>
 {/* Condition pour les borders-countries (car problème d'affichage) */}
-                {country.borders && country.borders.length > 0 ? (
-                <div>
-                    <p><b>Border-countries :<br></br></b> {Object.keys(country.borders).map((index) => {
-                        return (
-                            // <button className='btnBrd' key={index}>{country.borders[index]}</button>
-                        <Link to={`/pays/${country.borders[index]}`} key={index}>
-                            <button className='btnBrd'>{country.borders[index]}</button>
-                        </Link>
-                        );
-                    })}</p>
-                </div> )
-                :                 
-                <div>
-                    <p><b>Border-countries :</b> / </p>
-                </div>}
+            {country.borders ? (
+            <div>
+                <p><b>Border-countries :<br></br></b> {Object.keys(country.borders).map((index) => {
+                return (
+                    <Link to={`/pays/${country.borders[index]}`} key={index} >
+                    <button className='btnBrd' onClick={()=>props.showCard(index)}>{country.borders[index]}</button>
+                    </Link>
+                );
+                })}</p>
+            </div> 
+            ) :                 
+            <div>
+                <p><b>Border-countries :</b> / </p>
+            </div>
+            }
+{/* 
+                {country.borders ? country.borders.map((e,i)=>(
+                    <Link to={`/pays/${e}`}>
+                        <button  className='btnBrd' key={i}>{e}</button>
+                    </Link>
+                                        )):null} */}
+
             </div>
         </div>
         )}

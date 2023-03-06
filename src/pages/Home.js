@@ -4,7 +4,6 @@ import { Link } from "react-router-dom"
 function Home(props) {
     //filtre qui va permettre de trier les pays selon leur continent, on les affiche tous par défaut
     const [selectedRegion, setSelectedRegion] = useState("all");
-
     const handleRegionChange = (event) => {
         setSelectedRegion(event.target.value);
     }
@@ -25,7 +24,7 @@ function Home(props) {
             {/* {props.filterdCard.map((item, index) => { */}
         {props.filterdCard.filter(item => selectedRegion === "all" || item.region === selectedRegion).map((item, index) => {
             return(
-            <Link to={`/pays/${item.tld}`} style={{ textDecoration: 'none', color:'black' }}>
+            <Link to={`/pays/${item.cca3}`} style={{ textDecoration: 'none', color:'black' }}>
                 <div key={index} className={props.dark ? 'cardDark' : 'card'} onClick={()=>props.showCard(item)}>
                     <img src={item.flags.png} alt="" className="img"/>
                     <h4>{item.name.common}</h4>
