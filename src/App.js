@@ -7,7 +7,6 @@ import Navbar from './component/Navbar.js';
 import { useEffect } from 'react';
 import React from 'react';
 
-
 function App() {
   //Dark Mode 
   const [dark, setDark] = useState(false)
