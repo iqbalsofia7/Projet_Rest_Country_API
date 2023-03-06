@@ -14,7 +14,7 @@ function App() {
   const ChangeMode =()=>{
     setDark(!dark)
   }
-  //API Pays
+  //State qui contiendra l'API quand la page sera lancée
   const [data, setData] = useState([])
   useEffect (() => {
     //url de l'API
@@ -28,7 +28,6 @@ function App() {
 
   //Input Search
   const [searchValue, setSearchValue] = useState('');  
-  //API pour les filtres
   const [filteredCard, setFilteredCard] = useState(data);
   //Value de l'input Search
   const Rechercher =(e)=>{
@@ -46,10 +45,7 @@ function App() {
     const showCard = (country) => {
       setChoix(country);
     }
-    // const [selectedCountry, setSelectedCountry] = useState(null);
-    // const handleClick = (cca3) => {
-    //   setSelectedCountry(cca3);
-    // };
+
   return(
     <div className={dark ? 'AppDark' : 'App'}>
       <Navbar rechercher={Rechercher} darkMode={ChangeMode} dark={dark}/>

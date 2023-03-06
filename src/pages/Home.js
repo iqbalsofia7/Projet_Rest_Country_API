@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
 function Home(props) {
-    //filtre qui va permettre de trier les pays selon leur continent, on les affiche tous par défaut
+    //Select -> Options (filtre/continent)
     const [selectedRegion, setSelectedRegion] = useState("all");
     const handleRegionChange = (event) => {
         setSelectedRegion(event.target.value);
@@ -21,10 +21,12 @@ function Home(props) {
                 </select>
             </div>
             <br />
-            {/* {props.filterdCard.map((item, index) => { */}
+        {/* Filtre/Continent pour les cards  */}
         {props.filterdCard.filter(item => selectedRegion === "all" || item.region === selectedRegion).map((item, index) => {
             return(
             <Link to={`/pays/${item.cca3}`} style={{ textDecoration: 'none', color:'black' }}>
+                {/* Pas de useParams utilisé, c'est la card sur laquelle on va cliquer qui va faire appelle à une fonction onClick */}
+                {/* (qui va modifier le useState afin d'afficher la bonne card) */}
                 <div key={index} className={props.dark ? 'cardDark' : 'card'} onClick={()=>props.showCard(item)}>
                     <img src={item.flags.png} alt="" className="img"/>
                     <h4>{item.name.common}</h4>

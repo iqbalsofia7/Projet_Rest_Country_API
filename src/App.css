@@ -56,7 +56,7 @@ body, html {
     color: rgb(239, 233, 233);
     /* background: #645757; */
     transition: 0.3s;
-    background: linear-gradient(to bottom right, #000000 75%,  #232121 50%);
+    background: linear-gradient(to bottom right, #000000 75%,  #353434 50%);
 
 }
 .home {

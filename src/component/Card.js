@@ -3,11 +3,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
-
 //Component qui affichera uniquement la Card sur laquelle on a cliqué
 function Card(props) {
-    // const country = props.country;
-    const { id } = useParams();
+    const { id } = useParams(); //l'id repris ici fait partie du lien (voir App.js)
     const country = props.data.find((c) => c.cca3 === id);
     
     return (
@@ -15,6 +13,7 @@ function Card(props) {
         <Link to='../'>
         <button className='goBack'>Go Back</button>
         </Link>
+
         {country && (
         <div className='CardBody'>
             <img src={country.flags.png} alt="" className="imgCard"/>
@@ -34,11 +33,13 @@ function Card(props) {
                         );
                     })}</p>
                 </div>
+
 {/* Condition pour les borders-countries (car problème d'affichage) */}
             {country.borders ? (
             <div>
                 <p><b>Border-countries :<br></br></b> {Object.keys(country.borders).map((index) => {
                 return (
+// Link pour les border countries
                     <Link to={`/pays/${country.borders[index]}`} key={index} >
                     <button className='btnBrd' onClick={()=>props.showCard(index)}>{country.borders[index]}</button>
                     </Link>
@@ -50,12 +51,6 @@ function Card(props) {
                 <p><b>Border-countries :</b> / </p>
             </div>
             }
-{/* 
-                {country.borders ? country.borders.map((e,i)=>(
-                    <Link to={`/pays/${e}`}>
-                        <button  className='btnBrd' key={i}>{e}</button>
-                    </Link>
-                                        )):null} */}
 
             </div>
         </div>
