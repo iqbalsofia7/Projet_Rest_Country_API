@@ -10,6 +10,7 @@ function Card(props) {
     
     return (
     <section className={props.dark ? 'Card' : 'Card2'}>
+{/* Bouton pour revenir à la page principale  */}
         <Link to='../'>
         <button className='goBack'>Go Back</button>
         </Link>

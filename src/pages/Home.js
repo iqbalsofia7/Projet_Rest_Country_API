@@ -9,6 +9,7 @@ function Home(props) {
     }
 
     return(
+    // Select qui contient les options 
         <section className='home'>
             <div className='part2'>
                 <input type="search" onChange={props.rechercher} placeholder='Search for a country...' name="regions" id="" />
