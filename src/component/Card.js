@@ -19,7 +19,7 @@ function Card(props) {
         <div className='CardBody'>
             <img src={country.flags.png} alt="" className="imgCard"/>
             <div>
-                <h1>{country.name.common}</h1>
+                <h1 className='Title'>{country.name.common}</h1>
                 <br />
                 <div className="infosCard">
                     <p><b>Native name :</b> {country.name.common} </p>

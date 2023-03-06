@@ -2,7 +2,7 @@
     display: flex;
     /* justify-content: center; */
     margin: 0px 00px;
-    padding: 0px 50px;
+    /* padding: 0px 50px; */
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     height: auto;
@@ -14,7 +14,7 @@ body, html {
 .AppDark {
     display: flex;
     margin: 0px 00px;
-    padding: 0px 50px;
+    /* padding: 0px 50px; */
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     background: #232121;
@@ -59,7 +59,7 @@ body, html {
     /* background: #ffffff; */
     justify-content: space-around;
     /* flex-direction: column; */
-    margin: 0 auto;
+    margin: 0;
     flex-wrap: wrap;
     position: relative;
 }
@@ -71,6 +71,7 @@ body, html {
     border-top-left-radius:7px;
     border-top-right-radius: 7px;
     border: none
+
 }
 .infos {
     padding: 5px 20px 20px 20px
@@ -80,7 +81,7 @@ h4 {
 }
 
 nav {
-    padding: 25px 20px 5px 20px;
+    padding: 0px 0px 0px 0px;
 }
 .part1, .part2 {
     display: flex;
@@ -89,10 +90,28 @@ nav {
     align-items: center;
     margin: 0px 0px 20px 0px
 }
+.part1 {
+    background: white;
+    width: auto;
+    padding: 10px 50px;
+}
+
+.part11 {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(to bottom, #000000, #1b1b1b);
+    color: white;
+    width: auto;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 0px 20px 0px;
+}
+
 .part2 {
     width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
     position: static;
 }
 
@@ -201,3 +220,30 @@ span {
     color: white;
 }
 
+select > option:hover {
+    background: #000;
+    color: white;
+}
+
+@media only screen and (max-width: 620px) {
+    .part1, .part11, .part2 {
+        flex-direction: column;
+    }
+    .part2 > * {
+        margin: 5px;
+    }
+    .CardBody {
+        display: flex;
+        flex-direction: column;
+    }
+    .imgCard {
+        width: 90vw;
+        height: auto;
+    }
+    .Card {
+        height: auto;
+    }
+    .Title {
+        text-align: center;
+    }
+}

@@ -3,7 +3,7 @@ import React from 'react';
 function Navbar(props) {
     return (
         <nav>
-            <div className='part1'>
+            <div className={props.dark ? 'part11' : 'part1'}>
                 <h2>
                     {props.dark ? 'Where is the World ?' : 'Here is the World'} </h2>
                 <button className={props.dark ? 'darkBtn' : 'darkMode'} onClick={props.darkMode}>
